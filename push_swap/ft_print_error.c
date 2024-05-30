@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_back.c                                      :+:      :+:    :+:   */
+/*   ft_print_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 12:12:50 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/05/29 14:36:52 by fgonzal2         ###   ########.fr       */
+/*   Created: 2024/05/23 15:32:30 by fgonzal2          #+#    #+#             */
+/*   Updated: 2024/05/29 14:36:44 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//add a node to the stack from back side
-void	ft_add_back(t_stack **stack, t_stack *stack_new)
+void	ft_print_error(void)
 {
-	if (!stack)
-		return (0);
-	if (!*stack)
-		*stack = stack_new;
-	else
-		(ft_lst_last(*stack))->next = stack_new;
+	write(2, "Error\n", 6);
+	exit(1);
 }

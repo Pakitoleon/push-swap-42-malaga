@@ -1,17 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 15:32:30 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/05/23 15:33:30 by fgonzal2         ###   ########.fr       */
+/*   Created: 2024/05/29 10:52:45 by fgonzal2          #+#    #+#             */
+/*   Updated: 2024/05/30 12:26:14 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_error(void)
+#include "push_swap.h"
+
+void		ft_free(t_stack **stack)
 {
-	write(2, "Error\n", 6);
-	exit(1);
+	if (!stack || !*stack)
+		return;
+	free (*stack);
+	*stack = (0);
+}
+
+void	free_array(char **arr)
+{
+	int		i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free (arr[i]);
+		i++;
+	}
+	free (arr);
 }

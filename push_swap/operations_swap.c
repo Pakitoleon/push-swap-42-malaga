@@ -1,53 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_case.c                                          :+:      :+:    :+:   */
+/*   operations_swap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 16:23:35 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/05/29 14:36:37 by fgonzal2         ###   ########.fr       */
+/*   Created: 2024/04/08 12:15:36 by @fgonzal2         #+#    #+#             */
+/*   Updated: 2024/05/29 14:36:34 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			ft_case_rarb_a(t_stack *a, t_stack *b, int c)
+void	swap(t_stack **stack)
 {
+	t_stack	*first;
+	t_stack	*second;
 
+	if (!(*stack) || !(*stack)->next)
+		return ;
+	first = *stack;
+	second = (*stack)->next;
+	first->next = second->next;
+	first->prev = second;
+	second->next = first;
+	second->prev = NULL;
+	*stack = second;
 }
 
-int			ft_case_rrarrb_a(t_stack *a, t_stack *b, int c)
+void	sa(t_stack **a)
 {
-
-
-}
-int			ft_case_rarrb_a(t_stack *a, t_stack *b, int c)
-{
-
+	ft_printf("sa\n");
+	swap(a);
 }
 
-int			ft_case_rrarb_a(t_stack *a, t_stack *b, int c)
+void	sb(t_stack **b)
 {
-
+	ft_printf("sb\n");
+	swap(b);
 }
 
-int			ft_case_rarb(t_stack *a, t_stack *b, int c)
+void	ss(t_stack **a, t_stack **b)
 {
-
-}
-
-int			ft_case_rrarrb(t_stack *a, t_stack *b, int c)
-{
-
-}
-
-int			ft_case_rrarb(t_stack *a, t_stack *b, int c)
-{
-
-}
-
-int			ft_case_rarrb(t_stack *a, t_stack *b, int c)
-{
-
+	ft_printf("ss\n");
+	swap(a);
+	swap(b);
 }

@@ -3,65 +3,79 @@
 /*                                                        :::      ::::::::   */
 /*   help_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: @fgonzal2 <fgonzal2@studen.42malaga.com    +#+  +:+       +#+        */
+/*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:13:16 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/04/11 13:18:49 by @fgonzal2        ###   ########.fr       */
+/*   Updated: 2024/05/30 12:10:27 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // return the last element from statck.
-t_stack	*ft_lst_last(t_stack *lst)
+t_stack	*ft_last_stack(t_stack *stack)
 {
-	if (!lst)
+	if (!stack)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
 // return the size of the stack.
-int	ft_lst_size(t_stack *lst)
+int	ft_stack_size(t_stack *stack)
 {
 	size_t	i;
 
 	i = 0;
-	while (lst)
+	if (!stack)
+		return (0);
+	while (stack)
 	{
-		lst = lst->next;
+		stack = stack->next;
 		i++;
 	}
 	return (i);
 }
 
 // finds and return the smallest number in the stack
-int	ft_min(t_stack *a)
+int	ft_min(t_stack *stack)
 {
-	int	i;
+	int	min;
+	t_stack	stack_node;
 
-	i = a->nbr;
-	while (a)
+	min = stack->content;
+	stack_node = stack;
+	while (stack->next)
 	{
-		if (a->nbr < i)
-			i = a->nbr;
-		a = a->next;
+		stack = a->next;
+		if (stack->content < min)
+		{
+			min = stack->content;
+			stack_node = stack;
+		}
 	}
-	return (i);
+	return (stack_node);
 }
 
 //finds and return the bigest number in the stack
-int	ft_max(t_stack *a)
+int	ft_max(t_stack *stack)
 {
 	int	i;
-
-	i = a->nbr;
-	while (a)
+	t_stack	*stack_node;
+	int	max;
+	
+	i = 1;
+	max = stack-> content;
+	stack_node = stack;
+	while (++i <= stack_size(stack) + 1)
 	{
-		if (a->nbr > i)
-			i = a->nbr;
-		a = a->next;
+		a = stack->next;
+		if (stack->content > max)
+		{
+			max = stack->content;
+			stack_node = stack;
+		}
 	}
-	return (i);
+	return (stack_node);
 }

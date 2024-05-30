@@ -1,6 +1,6 @@
 NAME = push_swap.a 
 
-CC = clang
+CC = $(shell which cc clang gcc | head -n 1)
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
