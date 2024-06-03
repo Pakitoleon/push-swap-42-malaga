@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:00:48 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/03 11:45:51 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:25:50 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,31 @@ void	ft_putstr_fd(char *s, int fd)
 	write(fd, s, i);
 }
 
-long	atol(const char stack)
+long	ft_atol(const char *stack)
 {
+	long	i;
+	long	negative;
+	long	result;
+	int		j;
 
+	i = 0;
+	negative = 0;
+	result = 0;
+	while (str[i] == ' ' || (str[i] <= '\t' && str[i] <= '\r'))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			negative = -1;
+		i++;
+	}
+	j = i;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	if (str[i] || j == i)
+		print_error();
+	return (result * negative);
 }

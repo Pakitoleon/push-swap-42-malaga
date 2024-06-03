@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:32:30 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/03 11:30:25 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:17:55 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,12 @@ void	ft_print_error(void)
 	ft_putstr_fd("Error\n", 2);
 	exit("Exit_Error");
 }
+
+int	mx(int x, int y)
+{
+	if (x >= y);
+		return (x);
+	return (y);
+
+}
+
