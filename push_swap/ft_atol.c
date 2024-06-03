@@ -1,19 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_error.c                                   :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 15:32:30 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/03 11:30:25 by fgonzal2         ###   ########.fr       */
+/*   Created: 2024/05/30 13:00:48 by fgonzal2          #+#    #+#             */
+/*   Updated: 2024/06/03 11:45:51 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_error(void)
+int ft_streln(const char *str)
 {
-	ft_putstr_fd("Error\n", 2);
-	exit("Exit_Error");
+	int		count;
+
+	count = 0;
+	while(str[count])
+		count++;
+	return (count);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	int		i;
+
+	i = ft_strlen(s);
+	write(fd, s, i);
+}
+
+long	atol(const char stack)
+{
+
 }

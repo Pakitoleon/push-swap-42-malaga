@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:13:16 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/05/30 12:10:27 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/05/30 12:55:17 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_min(t_stack *stack)
 	stack_node = stack;
 	while (stack->next)
 	{
-		stack = a->next;
+		stack = stack->next;
 		if (stack->content < min)
 		{
 			min = stack->content;
@@ -68,9 +68,9 @@ int	ft_max(t_stack *stack)
 	i = 1;
 	max = stack-> content;
 	stack_node = stack;
-	while (++i <= stack_size(stack) + 1)
+	while (++i <= ft_stack_size(stack) + 1)
 	{
-		a = stack->next;
+		stack = stack->next;
 		if (stack->content > max)
 		{
 			max = stack->content;
