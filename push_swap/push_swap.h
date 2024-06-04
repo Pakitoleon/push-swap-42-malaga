@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:16:30 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/03 13:39:17 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/04 10:09:34 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,11 @@ int 	ft_streln(const char *str);
 void	ft_putstr_fd(char *s, int fd);
 long	ft_atol(const char *stack);
 void	ft_add_back(t_stack **stack, t_stack *stack_new);
+char	*ft_strdup(char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+static int	help_split(char const *s, char c);
+static void	leak_split(char **result, int j);
+static void position( char const *s, int *start, int *end, char c);
+char	**ft_split(char const *s, char c);
 
 #endif

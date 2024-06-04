@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:00:48 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/03 13:25:50 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/04 09:49:56 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ long	ft_atol(const char *stack)
 		i++;
 	}
 	if (str[i] || j == i)
-		print_error();
+		ft_print_error();
 	return (result * negative);
 }

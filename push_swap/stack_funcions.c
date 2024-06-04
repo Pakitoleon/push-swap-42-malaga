@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   help_functions.c                                   :+:      :+:    :+:   */
+/*   stack_funcions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:13:16 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/03 16:32:36 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/04 10:14:14 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_stack_size(t_stack *stack)
 t_stack	*ft_min(t_stack *stack)
 {
 	int	min;
-	t_stack	stack_node;
+	t_stack	*stack_node;
 
 	min = stack->content;
 	stack_node = stack;
