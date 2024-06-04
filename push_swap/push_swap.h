@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:16:30 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/04 10:09:34 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/04 10:19:34 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int		ft_find_place_b(t_stack *stack_b, int nbr_push);
 int		ft_find_place_a(t_stack *stack_a, int nbr_push);
 int 	ft_streln(const char *str);
 void	ft_putstr_fd(char *s, int fd);
-long	ft_atol(const char *stack);
+long	ft_atol(const char *str);
 void	ft_add_back(t_stack **stack, t_stack *stack_new);
 char	*ft_strdup(char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);

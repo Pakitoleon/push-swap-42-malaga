@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:13:16 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/04 10:14:14 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/04 11:12:15 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,43 @@ t_stack	*ft_max(t_stack *stack)
 		}
 	}
 	return (stack_node);
+}
+
+void	stack_add(t_stack **a, int n)
+{
+	t_stack	*new_node;
+
+	new_node = (t_stack *)malloc(sizeof(t_stack));
+	new_node->content = n;
+	new_node->next = NULL;
+	if (!(*a))
+	{
+		new_node->prev = NULL;
+		*a = new_node;
+	}
+	else
+	{
+		ft_last_node(*a)->next = new_node;
+		new_node->prev = ft_last_node(*a);
+	}
+}
+
+void	stack_init(t_stack **a, char **nbr)
+{
+	int		i;
+	long	n;
+
+	i = 0;
+	n = 0;
+	while(nbr[i] != NULL)
+	{
+		n = ft_atol(nbr[i]);
+		if (n > INT_MAX || n < INT_MIN)
+		{
+			ft_stack_free(a);
+			ft_print_error();
+		}
+		stack_add(a, (int)n);
+		i++;
+	}
 }

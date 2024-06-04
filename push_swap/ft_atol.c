@@ -6,13 +6,13 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:00:48 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/04 09:49:56 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/04 10:19:37 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_streln(const char *str)
+int	ft_streln(const char *str)
 {
 	int		count;
 
@@ -30,7 +30,7 @@ void	ft_putstr_fd(char *s, int fd)
 	write(fd, s, i);
 }
 
-long	ft_atol(const char *stack)
+long	ft_atol(const char *str)
 {
 	long	i;
 	long	negative;
