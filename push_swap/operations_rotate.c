@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:52:38 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/05/29 14:36:22 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:35:52 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	rotate(t_stack **stack)
 	if (!(*stack) || !(*stack)->next)
 		return ;
 	first = (*stack);
-	first->prev = stack_last_node(*stack);
-	stack_last_node(*stack)->next = first;
+	first->prev = ft_last_node(*stack);
+	ft_last_node(*stack)->next = first;
 	*stack = (*stack)->next;
 	first->next = NULL;
 	(*stack)->prev = NULL;

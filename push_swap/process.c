@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:35:11 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/03 16:54:34 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/04 17:48:07 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	check_input(char **nbr)
 	int j;
 
 	i =0;
-	while (nbr[i]
+	while (nbr[i])
 	{
 		j = i + 1;
 		ft_atol(nbr[i]);

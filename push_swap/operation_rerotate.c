@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 14:31:24 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/05/29 14:36:24 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/06 16:36:00 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	rrotate(t_stack **stack)
 	if (!(*stack) || !(*stack)->next)
 		return ;
 	find_last = (*stack);
-	to_first = stack_last_node(*stack);
+	to_first = ft_last_node(*stack);
 	i = stack_len(*stack) - 1;
 	while (--i > 0)
 		find_last = find_last->next;

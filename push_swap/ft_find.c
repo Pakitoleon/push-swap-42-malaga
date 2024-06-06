@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   help_function_2.c                                  :+:      :+:    :+:   */
+/*   ft_find.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: @fgonzal2 <fgonzal2@studen.42malaga.com    +#+  +:+       +#+        */
+/*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:19:40 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/04/18 15:30:48 by @fgonzal2        ###   ########.fr       */
+/*   Updated: 2024/06/05 17:04:05 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ int	ft_find_place_b(t_stack *stack_b, int nbr_push)
 	t_stack	*tmp;
 
 	i = 1;
-	if (nbr_push > stack_b->nbr && nbr_push < ft_lst_last(stack_b)->nbr)
+	if (nbr_push > stack_b->nbr && nbr_push < ft_last_node(stack_b)->nbr)
 		i = 0;
 	else if (nbr_push > ft_max(stack_b) || nbr_push < ft_min(stack_b))
 		i = ft_find_index(stack_b, ft_max(stack_b));
 	else
 	{
 		tmp = stack_b->next;
-		while (stack_b->nbr < nbr_push || tmp->nbr > nbr_push)
+		while (stack_b->nbr > nbr_push || tmp->nbr < nbr_push)
 		{
 			stack_b = stack_b->next;
 			tmp = stack_b->next;
@@ -55,7 +55,7 @@ int	ft_find_place_a(t_stack *stack_a, int nbr_push)
 	t_stack	*tmp;
 
 	i = 1;
-	if (nbr_push < stack_a->nbr && nbr_push > ft_lst_last(stack_a)->nbr)
+	if (nbr_push < stack_a->nbr && nbr_push > ft_last_node(stack_a)->nbr)
 		i = 0;
 	else if (nbr_push > ft_max(stack_a) || nbr_push < ft_min(stack_a))
 		i = ft_find_index(stack_a, ft_min(stack_a));

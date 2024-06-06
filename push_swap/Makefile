@@ -5,7 +5,18 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-FILES =
+FILES =	stack_funcions \
+					ft_atol \
+					ft_find \
+					ft_free \
+					ft_print_error \
+					ft_split \
+					operation_push \
+					operation_rerotate \
+					operations_rotate \
+					operations_swap \
+					process \
+					push_swap \
 
 FILES_BONUS =
 
