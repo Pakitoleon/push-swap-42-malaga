@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 14:32:21 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/05/30 10:38:10 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/10 13:00:00 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,14 @@ int	main(int argc, char **argv)
 	t_stack	*a;
 	t_stack	*b;
 	char	**nbrs;
-	
+
 	a = NULL;
 	b = NULL;
 	nbrs = 0;
-	if (argc > 1);
-	
+	if (argc > 1)
+		process_in(argc, argv, nbrs, &a);
+	if (!stack_sorted(a))
+		sort_stack(&a, &b);
+	stack_free(&a);
+	return (0);
 }

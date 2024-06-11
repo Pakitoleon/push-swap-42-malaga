@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_structure.c                                     :+:      :+:    :+:   */
+/*   utils_for_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 10:21:33 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/10 12:58:43 by fgonzal2         ###   ########.fr       */
+/*   Created: 2024/06/11 12:03:58 by fgonzal2          #+#    #+#             */
+/*   Updated: 2024/06/11 12:15:09 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	stack_sorted(t_stack *stack)
+int	stack_sorted(t_stack *stack)
 {
 	if (stack_len(stack) < 2)
 		return (1);
@@ -25,11 +25,11 @@ t_stack	stack_sorted(t_stack *stack)
 	return (1);
 }
 
-void	node_top_a(t_stack *node, t_stack **stack)
+void	top_node_a(t_stack *node, t_stack **stack)
 {
 	while (*stack != node)
 	{
-		if (node->is_upper)
+		if (node->is_upper_side)
 			ra(stack);
 		else
 			rra(stack);
@@ -37,11 +37,11 @@ void	node_top_a(t_stack *node, t_stack **stack)
 	}
 }
 
-void	node_top_b(t_stack *node, t_stack **stack)
+void	top_node_b(t_stack *node, t_stack **stack)
 {
 	while (*stack != node)
 	{
-		if (node->is_upper)
+		if (node->is_upper_side)
 			rb(stack);
 		else
 			rrb(stack);
@@ -49,36 +49,35 @@ void	node_top_b(t_stack *node, t_stack **stack)
 	}
 }
 
-void stack_index_side(t_stack *stack)
+void	stack_index_side(t_stack *stack)
 {
-	int	a;
-	int	b;
+	int	i;
+	int	half;
 
 	i = 0;
-	b = (stack_len(stack) +1) /2;
+	half = (stack_len(stack) + 1) / 2;
 	while (stack)
 	{
-		stack->index = ++a;
-		stack->is_mid = b;
-		if(a <= b)
+		stack->index = ++i;
+		stack->mid = half;
+		if (i <= half)
 		{
-			stack->is_upper = 1;
-			stack->is_down = b -1;
+			stack->is_upper_side = 1;
+			stack->dist_to_mid = half - i;
 		}
 		else
 		{
-			stack->is_upper = 0;
-			stack->is_down = a - b;
+			stack->is_upper_side = 0;
+			stack->dist_to_mid = i - half;
 		}
 		stack = stack->next;
 	}
 }
 
-
-t_stack	stack_structure(t_stack *a, t_stack *b)
+t_stack	*stack_set_structure(t_stack *a, t_stack *b)
 {
-	stack_index(a);
-	stack_index(b);
-	stack_target(a, b);
-	return (stack_cost(a, b));
+	stack_index_side(a);
+	stack_index_side(b);
+	stack_a_target(a, b);
+	return (stack_costs(a, b));
 }

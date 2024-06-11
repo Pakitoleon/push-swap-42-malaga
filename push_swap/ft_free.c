@@ -6,22 +6,20 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 10:52:45 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/03 12:23:55 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/10 12:48:28 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		ft_stack_free(t_stack **stack)
+void	ft_stack_free(t_stack **stack)
 {
 	t_stack	*node;
 	t_stack	*swp;
 
 	if (!stack)
-		return;
-
+		return ;
 	node = *stack;
-
 	while (node)
 	{
 		swp = node->next;
