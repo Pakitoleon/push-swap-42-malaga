@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:16:30 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/13 11:44:51 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/13 13:29:13 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ long		ft_atol(const char *str);
 char		*ft_strdup(char *s1);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		**ft_split(char const *s, char c);
-void	position( char const *s, int *start, int *end, char c);
-int	help_split(char const *s, char c);
-void	leak_split(char **result, int j);
+void		position( char const *s, int *start, int *end, char c);
+int			help_split(char const *s, char c);
+void		leak_split(char **result, int j);
 //int			ft_find_index(t_stack *a, int nbrs);
 int			ft_find_place_b(t_stack *stack_b, int nbr_push);
 int			ft_find_place_a(t_stack *stack_a, int nbr_push);
-t_stack		stack_sorted(t_stack *stack);
+int			stack_sorted(t_stack *stack);
 void		node_top_a(t_stack *node, t_stack **stack);
 void		node_top_b(t_stack *node, t_stack **stack);
 void		stack_index_side(t_stack *stack);
@@ -80,7 +80,7 @@ void		sort_stack(t_stack **a, t_stack **b);
 void		stack_a_target(t_stack *a, t_stack *b);
 void		stack_b_target(t_stack *a, t_stack *b);
 void		cost_calculator(t_stack *a, t_stack *target, int c_len, int d_len);
-t_stack		*stack_costs(t_stack *a, t_stack *b);
+t_stack		*stack_cost(t_stack *a, t_stack *b);
 //static void	look_position(t_stack **a, t_stack *move);
 //void		complete_b(t_stack **a, t_stack **b, t_stack *move);
 void		sort_out_b(t_stack **a, t_stack **b);

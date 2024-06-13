@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:05:40 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/13 11:53:51 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/13 13:00:30 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,19 @@ void	cost_calculator(t_stack *a, t_stack *target, int c_len, int d_len)
 
 	nba = a->index;
 	nbt = target->index;
-	if (a->is_upper_side && (target->is_upper_side
-			|| (nbt - nba < target->mid)))
+	if (a->is_upper && (target->is_upper
+			|| (nbt - nba < target->is_mid)))
 		a->cost = mx(a->index, target->index);
-	else if (!a->is_upper_side && (!target->is_upper_side
-			|| (nbt + c_len - a->index) > target->mid))
+	else if (!a->is_upper && (!target->is_upper
+			|| (nbt + c_len - a->index) > target->is_mid))
 		a->cost = mx(c_len - a->index + 1, d_len - target->index + 1);
-	else if (a->is_upper_side)
+	else if (a->is_upper)
 		a->cost = a->index + (d_len - target->index + 1);
 	else
 		a->cost = (c_len - a->index + 1) + target->index;
 }
 
-t_stack	*stack_costs(t_stack *a, t_stack *b)
+t_stack	*stack_cost(t_stack *a, t_stack *b)
 {
 	t_stack	*cheapest;
 	t_stack	*target;
@@ -88,8 +88,8 @@ t_stack	*stack_costs(t_stack *a, t_stack *b)
 	int		b_len;
 
 	low_cost = INT_MAX;
-	a_len = stack_len(a);
-	b_len = stack_len(b);
+	a_len = ft_stack_size (a);
+	b_len = ft_stack_size (b);
 	while (a)
 	{
 		target = a->target;

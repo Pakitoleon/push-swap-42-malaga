@@ -6,15 +6,15 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:21:33 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/12 13:41:31 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/13 16:57:54 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	stack_sorted(t_stack *stack)
+int	stack_sorted(t_stack *stack)
 {
-	if (stack_len(stack) < 2)
+	if (ft_stack_size(stack) < 2)
 		return (1);
 	while (stack->next)
 	{
@@ -54,8 +54,8 @@ void	stack_index_side(t_stack *stack)
 	int	a;
 	int	b;
 
-	i = 0;
-	b = (stack_len (stack) +1) / 2;
+	a = 0;
+	b = (ft_stack_size (stack) +1) / 2;
 	while (stack)
 	{
 		stack->index = ++a;
@@ -76,8 +76,8 @@ void	stack_index_side(t_stack *stack)
 
 t_stack	stack_structure(t_stack *a, t_stack *b)
 {
-	stack_index(a);
-	stack_index(b);
-	stack_target(a, b);
-	return (stack_cost(a, b));
+	stack_index_side(a);
+	stack_index_side(b);
+	stack_a_target(a, b);
+	return (*stack_cost(a, b));
 }
