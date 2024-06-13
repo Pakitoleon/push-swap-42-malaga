@@ -10,13 +10,21 @@ FILES =	stack_funcions \
 					ft_find \
 					ft_free \
 					ft_print_error \
+					ft_split_utils \
 					ft_split \
+					ft_steps_calculator \
+					ft_structure \
 					operation_push \
 					operation_rerotate \
 					operations_rotate \
 					operations_swap \
 					process \
 					push_swap \
+					sort_position \
+					stack_size.c \
+					stack_funcions \
+					stack_sorting \
+					utils_for_sort \
 
 FILES_BONUS =
 

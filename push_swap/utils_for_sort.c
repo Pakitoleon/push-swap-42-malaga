@@ -6,13 +6,13 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:03:58 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/11 12:15:09 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:41:57 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_sorted(t_stack *stack)
+int	stack_is_sorted(t_stack *stack)
 {
 	if (stack_len(stack) < 2)
 		return (1);

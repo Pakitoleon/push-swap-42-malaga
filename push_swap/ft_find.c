@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:19:40 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/05 17:04:05 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:34:13 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	ft_find_place_b(t_stack *stack_b, int nbr_push)
 	i = 1;
 	if (nbr_push > stack_b->nbr && nbr_push < ft_last_node(stack_b)->nbr)
 		i = 0;
-	else if (nbr_push > ft_max(stack_b) || nbr_push < ft_min(stack_b))
-		i = ft_find_index(stack_b, ft_max(stack_b));
+	else if (nbr_push > ft_max(stack_b)->nbr || nbr_push < ft_min(stack_b)->nbr)
+		i = ft_find_index(stack_b, ft_max(stack_b)->nbr);
 	else
 	{
 		tmp = stack_b->next;
@@ -57,8 +57,8 @@ int	ft_find_place_a(t_stack *stack_a, int nbr_push)
 	i = 1;
 	if (nbr_push < stack_a->nbr && nbr_push > ft_last_node(stack_a)->nbr)
 		i = 0;
-	else if (nbr_push > ft_max(stack_a) || nbr_push < ft_min(stack_a))
-		i = ft_find_index(stack_a, ft_min(stack_a));
+	else if (nbr_push > ft_max(stack_a)->nbr || nbr_push < ft_min(stack_a)->nbr)
+	i = ft_find_index(stack_a, ft_max(stack_a)->nbr);
 	else
 	{
 		tmp = stack_a->next;

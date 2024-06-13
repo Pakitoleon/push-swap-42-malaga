@@ -6,13 +6,13 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:00:48 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/10 12:39:59 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:44:21 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_streln(const char *str)
+int	ft_strlen(const char *str)
 {
 	int		count;
 

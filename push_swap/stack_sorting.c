@@ -6,13 +6,13 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:44:32 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/10 12:46:38 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:41:55 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	limits_stack(int *min, int *max, t_stack *stack)
+/*static int	limits_stack(int *min, int *max, t_stack *stack)
 {
 	int	i;
 	int	max_a;
@@ -23,22 +23,22 @@ static int	limits_stack(int *min, int *max, t_stack *stack)
 	*min = 1;
 	min_b = stack->content;
 	max_a = stack->content;
-	while (++i <=(stack_len(stack)+1))
+	while (++i <= (stack_len(stack)+1))
 	{
-    	stack = stack->next;
-    	if (min_b > stack->content)
-    	{
-        	min_b = stack->content;
-    		*min = i;
-    	}
-    	if (max_a < stack->content)
-    	{
-    	    max_a = stack->content;
-    	    *max = i;
-    	}
+		stack = stack->next;
+		if (min_b > stack->content)
+		{
+			min_b = stack->content;
+			*min = i;
+		}
+		if (max_a < stack->content)
+		{
+			max_a = stack->content;
+			*max = i;
+		}
 	}
-return (*min);
-}
+	return (*min);
+}*/
 
 void	sort_tree(t_stack **stack)
 {
@@ -54,13 +54,13 @@ void	sort_tree(t_stack **stack)
 		ra(stack);
 	else if ((min == 1) || (max == 3))
 		sa(stack);
-	else if (min == 3);
+	else if (min == 3)
 		rra(stack);
 }
 
 void	sort_stack(t_stack **a, t_stack **b)
 {
-	if (stack_sorted (*a)&& !b)
+	if (stack_is_sorted (*a) && !b)
 		return ;
 	if (ft_stack_size(*a) == 2)
 		sa(a);
@@ -70,5 +70,5 @@ void	sort_stack(t_stack **a, t_stack **b)
 			sort_tree(a);
 	}
 	else if (!stack_sorted (*a))
-	sort_big(a, b);
+		sort_big(a, b);
 }

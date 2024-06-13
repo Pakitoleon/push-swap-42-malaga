@@ -6,70 +6,11 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:13:16 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/06 16:39:40 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:41:51 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// return the size of the stack.
-int	ft_stack_size(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	if (!stack)
-		return (0);
-	while (stack->next)
-	{
-		stack = stack->next;
-		i++;
-	}
-	i++;
-	return (i);
-}
-
-// finds and return the smallest number in the stack
-t_stack	*ft_min(t_stack *stack)
-{
-	int	min;
-	t_stack	*stack_node;
-
-	min = stack->content;
-	stack_node = stack;
-	while (stack->next)
-	{
-		stack = stack->next;
-		if (min > stack->content)
-		{
-			min = stack->content;
-			stack_node = stack;
-		}
-	}
-	return (stack_node);
-}
-
-//finds and return the bigest number in the stack
-t_stack	*ft_max(t_stack *stack)
-{
-	int	i;
-	t_stack	*stack_node;
-	int	max;
-	
-	i = 1;
-	max = stack-> content;
-	stack_node = stack;
-	while (++i <= ft_stack_size(stack) + 1)
-	{
-		stack = stack->next;
-		if (max < stack->content)
-		{
-			max = stack->content;
-			stack_node = stack;
-		}
-	}
-	return (stack_node);
-}
 
 void	stack_add(t_stack **a, int n)
 {
@@ -97,10 +38,10 @@ void	stack_init(t_stack **a, char **nbr)
 
 	i = 0;
 	n = 0;
-	while(nbr[i] != NULL)
+	while (nbr[i] != NULL)
 	{
 		n = ft_atol(nbr[i]);
-		if(n > INT_MAX || n < INT_MIN)
+		if (n > INT_MAX || n < INT_MIN)
 		{
 			ft_stack_free(a);
 			ft_print_error();

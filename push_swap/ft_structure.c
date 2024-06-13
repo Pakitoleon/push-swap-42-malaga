@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 10:21:33 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/10 12:58:43 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:41:31 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,18 @@ void	node_top_b(t_stack *node, t_stack **stack)
 	}
 }
 
-void stack_index_side(t_stack *stack)
+void	stack_index_side(t_stack *stack)
 {
 	int	a;
 	int	b;
 
 	i = 0;
-	b = (stack_len(stack) +1) /2;
+	b = (stack_len (stack) +1) / 2;
 	while (stack)
 	{
 		stack->index = ++a;
 		stack->is_mid = b;
-		if(a <= b)
+		if (a <= b)
 		{
 			stack->is_upper = 1;
 			stack->is_down = b -1;
@@ -73,7 +73,6 @@ void stack_index_side(t_stack *stack)
 		stack = stack->next;
 	}
 }
-
 
 t_stack	stack_structure(t_stack *a, t_stack *b)
 {

@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:35:11 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/10 12:45:01 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:41:42 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ void	check_input(char **nbr)
 	int	i;
 	int	j;
 
-	i =0;
-
+	i = 0;
 	while (nbr[i])
 	{
 		j = i + 1;
@@ -35,17 +34,19 @@ void	check_input(char **nbr)
 
 void	process_in(int argc, char **argv, char **nbr, t_stack **a)
 {
-	if(argc ==2)
+	if (argc == 2)
 	{
 		if (!argv[1][0] || ((argv[1][0] == '+'
 				|| argv[1][0] == '-') && !argv[1][1]))
-				ft_print_error();
+			ft_print_error();
 		nbr = ft_split(argv[1], ' ');
 	}
 	else
-	nbr = (argv + 1);
-	check_input(nbr);
-	stack_init(a, nbr);
-	if (argc == 2)
-		free_array(nbr);
+	{
+		nbr = (argv + 1);
+		check_input(nbr);
+		stack_init(a, nbr);
+		if (argc == 2)
+			free_array(nbr);
+	}
 }

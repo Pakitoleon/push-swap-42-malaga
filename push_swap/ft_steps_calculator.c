@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:05:40 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/11 10:34:56 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/13 11:53:51 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	stack_a_target(t_stack *a, t_stack *b)
 			tmp = tmp->next;
 		}
 		if (paper_bin == LONG_MIN)
-			a->target = min_stack(b);
+			a->target = ft_min(b);
 		a = a->next;
 	}
 }
@@ -55,7 +55,7 @@ void	stack_b_target(t_stack *a, t_stack *b)
 			tmp = tmp->next;
 		}
 		if (paper_bin == LONG_MIN)
-			b->target = min_stack(a);
+			b->target = ft_min(a);
 		b = b->next;
 	}
 }
