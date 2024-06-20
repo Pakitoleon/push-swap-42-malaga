@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 14:31:24 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/12 13:41:37 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:15:14 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	rrotate(t_stack **stack)
 		return ;
 	find_last = (*stack);
 	to_first = ft_last_node(*stack);
-	i = stack_len(*stack) - 1;
+	i = ft_stack_size(*stack) - 1;
 	while (--i > 0)
 		find_last = find_last->next;
 	find_last->next = NULL;
@@ -31,7 +31,7 @@ void	rrotate(t_stack **stack)
 	(*stack) = to_first;
 }
 
-void	rra(t_stack **a)
+/*void	rra(t_stack **a)
 {
 	ft_printf("rra\n");
 	rrotate(a);
@@ -48,4 +48,4 @@ void	rrr(t_stack **a, t_stack **b)
 	ft_printf("rrr\n");
 	rrotate(a);
 	rrotate(b);
-}
+}*/

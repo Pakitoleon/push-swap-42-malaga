@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:12:23 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/12 13:41:53 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:13:46 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,13 @@ t_stack	*ft_max(t_stack *stack)
 		}
 	}
 	return (stack_node);
+}
+
+t_stack	*stack_last_node(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }

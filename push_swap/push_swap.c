@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 14:32:21 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/12 13:41:44 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/20 12:18:30 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	main(int argc, char **argv)
 		process_in(argc, argv, nbrs, &a);
 	if (!stack_sorted(a))
 		sort_stack(&a, &b);
-	stack_free(&a);
+	ft_stack_free(&a);
 	return (0);
 }

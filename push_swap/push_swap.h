@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:16:30 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/13 13:29:13 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/20 12:23:03 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ void		top_node_a(t_stack *node, t_stack **stack);
 void		top_node_b(t_stack *node, t_stack **stack);
 void		stack_index_side(t_stack *stack);
 t_stack		*stack_set_structure(t_stack *a, t_stack *b);
-
+void		stack_init(t_stack **a, char **nbr);
+void		process_in(int argc, char **argv, char **nbr, t_stack **a);
 #endif

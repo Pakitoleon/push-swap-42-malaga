@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:52:38 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/12 13:41:39 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:11:21 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rotate(t_stack **stack)
 	(*stack)->prev = NULL;
 }
 
-void	ra(t_stack **a)
+/*void	ra(t_stack **a)
 {
 	ft_printf("ra\n");
 	rotate(a);
@@ -43,4 +43,4 @@ void	rr(t_stack **a, t_stack **b)
 	ft_printf("rr\n");
 	rotate(a);
 	rotate(b);
-}
+}*/
