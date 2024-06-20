@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:33:23 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/20 12:18:46 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:33:55 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static void	look_position(t_stack **a, t_stack *move)
 	target = move->target;
 	if (move->is_upper && !(target->is_upper))
 	{
-		if (target->index - move->index < target->prev)
+		if (target->index - move->index < target->is_mid)
 			target->is_upper = 1;
 	}
 	else if (! (move->is_upper) && target->is_upper)
 	{
-		if (target->index + ft_stack_size(*a - move->index) > target->prev)
+		if (target->index + ft_stack_size(*a - move->index) > target->is_mid)
 			target->is_upper = 0;
 	}
 }
@@ -62,7 +62,7 @@ void	sort_out_b(t_stack **a, t_stack **b)
 void	biggest_sort(t_stack **a, t_stack **b)
 {
 	sort_out_b(a, b);
-	if (!stack_sorted(a, b))
+	if (!stack_sorted(*a))
 		sort_stack(a, b);
 	while (*b)
 	{

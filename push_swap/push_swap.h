@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:16:30 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/20 12:23:03 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:37:42 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack
 	int				content;
 	int				index;
 	int				cost;
+	int				half;
 	int				is_upper;
 	int				is_down;
 	int				is_mid;
@@ -32,6 +33,7 @@ typedef struct s_stack
 	struct s_stack	*prev;
 	struct s_stack	*sort;
 	struct s_stack	*target;
+
 }	t_stack;
 
 void		swap(t_stack **stack);
@@ -53,6 +55,7 @@ int			ft_stack_size(t_stack *stack);
 t_stack		*ft_last_node(t_stack *stack);
 t_stack		*ft_min(t_stack *stack);
 t_stack		*ft_max(t_stack *stack);
+t_stack		*stack_last_node(t_stack *stack);
 void		ft_print_error(void);
 int			mx(int x, int y);
 void		ft_stack_free(t_stack **stack);

@@ -6,13 +6,13 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:44:32 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/12 13:41:55 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:06:39 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*static int	limits_stack(int *min, int *max, t_stack *stack)
+static int	limits_stack(int *min, int *max, t_stack *stack)
 {
 	int	i;
 	int	max_a;
@@ -23,7 +23,7 @@
 	*min = 1;
 	min_b = stack->content;
 	max_a = stack->content;
-	while (++i <= (stack_len(stack)+1))
+	while (++i <= (ft_stack_size(stack)+1))
 	{
 		stack = stack->next;
 		if (min_b > stack->content)
@@ -38,7 +38,7 @@
 		}
 	}
 	return (*min);
-}*/
+}
 
 void	sort_tree(t_stack **stack)
 {
@@ -66,9 +66,9 @@ void	sort_stack(t_stack **a, t_stack **b)
 		sa(a);
 	else if (ft_stack_size(*a) == 3)
 	{
-		while (!(sort_stack(*a)))
+		while (!(stack_is_sorted(*a)))
 			sort_tree(a);
 	}
-	else if (!stack_sorted (*a))
-		sort_big(a, b);
+	else if (!stack_is_sorted (*a))
+		biggest_sort(a, b);
 }

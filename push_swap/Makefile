@@ -14,6 +14,7 @@ FILES =	stack_funcions \
 					ft_split \
 					ft_steps_calculator \
 					ft_structure \
+					ft_stack_size.c \
 					operation_push \
 					operation_rerotate \
 					operations_rotate \
@@ -21,7 +22,6 @@ FILES =	stack_funcions \
 					process \
 					push_swap \
 					sort_position \
-					stack_size.c \
 					stack_funcions \
 					stack_sorting \
 					utils_for_sort \

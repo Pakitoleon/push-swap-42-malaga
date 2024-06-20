@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:03:58 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/13 13:11:40 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/20 14:35:14 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	top_node_a(t_stack *node, t_stack **stack)
 {
 	while (*stack != node)
 	{
-		if (node->is_upper_side)
+		if (node->is_upper)
 			ra(stack);
 		else
 			rra(stack);
@@ -41,7 +41,7 @@ void	top_node_b(t_stack *node, t_stack **stack)
 {
 	while (*stack != node)
 	{
-		if (node->is_upper_side)
+		if (node->is_upper)
 			rb(stack);
 		else
 			rrb(stack);
@@ -59,16 +59,16 @@ void	stack_index_side(t_stack *stack)
 	while (stack)
 	{
 		stack->index = ++i;
-		stack->mid = half;
+		stack->is_mid = half;
 		if (i <= half)
 		{
-			stack->is_upper_side = 1;
-			stack->dist_to_mid = half - i;
+			stack->is_upper = 1;
+			stack->is_mid =half - i;
 		}
 		else
 		{
-			stack->is_upper_side = 0;
-			stack->dist_to_mid = i - half;
+			stack->is_upper = 0;
+			stack->is_mid =i - half;
 		}
 		stack = stack->next;
 	}
@@ -79,5 +79,5 @@ t_stack	*stack_set_structure(t_stack *a, t_stack *b)
 	stack_index_side(a);
 	stack_index_side(b);
 	stack_a_target(a, b);
-	return (*stack_costs(a, b));
+	return &(*stack_cost(a, b));
 }
