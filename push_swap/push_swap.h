@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:16:30 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/20 14:37:42 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/26 09:42:56 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdarg.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>

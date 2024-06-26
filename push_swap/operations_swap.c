@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 12:15:36 by @fgonzal2         #+#    #+#             */
-/*   Updated: 2024/06/20 10:11:30 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/26 09:48:56 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,21 @@ void	swap(t_stack **stack)
 	*stack = second;
 }
 
-/*void	sa(t_stack **a)
+void	sa(t_stack **a)
 {
-	ft_printf("sa\n");
+	printf("sa\n");
 	swap(a);
 }
 
 void	sb(t_stack **b)
 {
-	ft_printf("sb\n");
+	printf("sb\n");
 	swap(b);
 }
 
 void	ss(t_stack **a, t_stack **b)
 {
-	ft_printf("ss\n");
+	printf("ss\n");
 	swap(a);
 	swap(b);
-}*/
+}

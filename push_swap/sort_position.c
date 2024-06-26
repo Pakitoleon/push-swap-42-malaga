@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:33:23 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/20 14:33:55 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/26 10:00:47 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	complete_b( t_stack **a, t_stack **b, t_stack *move)
 void	sort_out_b(t_stack **a, t_stack **b)
 {
 	pb(a, b);
-	if (ft_stack_size(*a) > 3 && !stack_sorted(*a))
+	if (ft_stack_size(*a) > 3 && !stack_is_sorted(*a))
 		pb(a, b);
-	while (ft_stack_size(*a) > 3 && !stack_sorted(*a))
+	while (ft_stack_size(*a) > 3 && !stack_is_sorted(*a))
 	{
 		stack_a_target(*a, *b);
 		complete_b(a, b, stack_set_structure(*a, *b));
@@ -62,7 +62,7 @@ void	sort_out_b(t_stack **a, t_stack **b)
 void	biggest_sort(t_stack **a, t_stack **b)
 {
 	sort_out_b(a, b);
-	if (!stack_sorted(*a))
+	if (!stack_is_sorted(*a))
 		sort_stack(a, b);
 	while (*b)
 	{
@@ -70,6 +70,7 @@ void	biggest_sort(t_stack **a, t_stack **b)
 		stack_index_side(*b);
 		stack_b_target(*a, *b);
 		top_node_a((*b)->target, a);
+		pa(a, b);
 	}
 	top_node_a(ft_min(*a), a);
 }

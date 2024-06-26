@@ -1,4 +1,4 @@
-NAME = push_swap.a 
+NAME = push_swap.a
 
 CC = $(shell which cc clang gcc | head -n 1)
 CFLAGS = -Wall -Wextra -Werror
@@ -13,8 +13,7 @@ FILES =	stack_funcions \
 					ft_split_utils \
 					ft_split \
 					ft_steps_calculator \
-					ft_structure \
-					ft_stack_size.c \
+					ft_stack_size \
 					operation_push \
 					operation_rerotate \
 					operations_rotate \
@@ -22,7 +21,6 @@ FILES =	stack_funcions \
 					process \
 					push_swap \
 					sort_position \
-					stack_funcions \
 					stack_sorting \
 					utils_for_sort \
 
@@ -37,25 +35,25 @@ OBJS_DIR = ./
 OBJ = $(SRCS:%.c=%.o)
 OBJ_BONUS = $(SRCS_BONUS:%.c=%.o)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o : %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
 bonus: $(OBJ_BONUS)
-	$(AR) $(NAME) $(OBJ_BONUS)
+	$(CC) $(CFLAGS) $(OBJ_BONUS) -o $(NAME)_bonus
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(NAME)_bonus
 
-re: clean all
+re: fclean all
 
 rebonus: fclean bonus
 
-.PHONY: all bonus clean fclean re rebonus
+.PHONY: all bonus clean fclean re rebonus re bonus

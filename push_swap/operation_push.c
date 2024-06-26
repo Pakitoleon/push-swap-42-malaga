@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 14:32:59 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/20 10:11:46 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/25 13:55:50 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ void	push(t_stack **origin, t_stack **target)
 	*target = send;
 }
 
-/*void	pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b)
 {
-	ft_printf("pa\n");
+	printf("pa\n");
 	push(b, a);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
-	ft_printf("pb\n");
+	printf("pb\n");
 	push(a, b);
-}*/
+}
