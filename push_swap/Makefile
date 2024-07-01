@@ -1,4 +1,4 @@
-NAME = push_swap.a
+NAME = push_swap
 
 CC = $(shell which cc clang gcc | head -n 1)
 CFLAGS = -Wall -Wextra -Werror
@@ -21,6 +21,7 @@ FILES =	stack_funcions \
 					process \
 					push_swap \
 					sort_position \
+					stack_funcions \
 					stack_sorting \
 					utils_for_sort \
 

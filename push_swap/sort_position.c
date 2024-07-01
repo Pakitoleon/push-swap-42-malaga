@@ -6,28 +6,11 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:33:23 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/26 10:00:47 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/07/01 12:56:46 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	look_position(t_stack **a, t_stack *move)
-{
-	t_stack	*target;
-
-	target = move->target;
-	if (move->is_upper && !(target->is_upper))
-	{
-		if (target->index - move->index < target->is_mid)
-			target->is_upper = 1;
-	}
-	else if (! (move->is_upper) && target->is_upper)
-	{
-		if (target->index + ft_stack_size(*a - move->index) > target->is_mid)
-			target->is_upper = 0;
-	}
-}
 
 void	complete_b( t_stack **a, t_stack **b, t_stack *move)
 {
@@ -45,6 +28,23 @@ void	complete_b( t_stack **a, t_stack **b, t_stack *move)
 	top_node_a(move, a);
 	top_node_b(move->target, b);
 	pb(a, b);
+}
+
+void	look_position(t_stack **a, t_stack *move)
+{
+	t_stack	*target;
+
+	target = move->target;
+	if (move->is_upper && !(target->is_upper))
+	{
+		if (target->index - move->index < target->is_mid)
+			target->is_upper = 1;
+	}
+	else if (! (move->is_upper) && target->is_upper)
+	{
+		if ((target->index + ft_stack_size(*a)- move->index) > target->is_mid)
+			target->is_upper = 0;
+	}
 }
 
 void	sort_out_b(t_stack **a, t_stack **b)

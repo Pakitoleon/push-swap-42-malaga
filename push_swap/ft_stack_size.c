@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 14:38:50 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/20 14:41:21 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/07/01 09:52:47 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ int	ft_stack_size(t_stack *stack)
 // finds and return the smallest number in the stack
 t_stack	*ft_min(t_stack *stack)
 {
-	int			min;
+	int			value;
 	t_stack		*stack_node;
 
-	min = stack->content;
+	value = stack->content;
 	stack_node = stack;
 	while (stack->next)
 	{
 		stack = stack->next;
-		if (min > stack->content)
+		if (value > stack->content)
 		{
-			min = stack->content;
+			value = stack->content;
 			stack_node = stack;
 		}
 	}

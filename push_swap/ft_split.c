@@ -6,13 +6,13 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:03:55 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/13 11:45:09 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/07/01 13:41:24 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**ft_split(char const *s, char c)
+char	*ft_split(char const *s, char c)
 {
 	char	**result;
 	int		start;
@@ -21,12 +21,12 @@ char	**ft_split(char const *s, char c)
 
 	result = (char **)malloc(sizeof(char *) * (help_split(s, c) + 1));
 	if (!result || !s)
-		return (NULL);
+		return (0);
 	start = 0;
 	j = 0;
 	while (s[start])
 	{
-		position(s, &start, &end, c);
+		position_split(s, &start, &end, c);
 		if (s[end] == c || end > start)
 		{
 			result[j] = ft_substr(s, start, end - start);
@@ -37,7 +37,7 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	result[j] = NULL;
-	return (result);
+	return *result;
 }
 
 int	help_split(char const *s, char c)
@@ -70,7 +70,7 @@ void	leak_split(char **result, int j)
 	free(result);
 }
 
-void	position( char const *s, int *start, int *end, char c)
+void	position_split( char const *s, int *start, int *end, char c)
 {
 	while (s[*start] == c)
 		*start += 1;

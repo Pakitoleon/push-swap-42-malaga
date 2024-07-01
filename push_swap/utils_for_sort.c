@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:03:58 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/26 10:07:44 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/06/26 14:01:34 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void	stack_index_side(t_stack *stack)
 		if (i <= half)
 		{
 			stack->is_upper = 1;
-			stack->is_mid =half - i;
+			stack->is_down =half - i;
 		}
 		else
 		{
 			stack->is_upper = 0;
-			stack->is_mid =i - half;
+			stack->is_down =i - half;
 		}
 		stack = stack->next;
 	}

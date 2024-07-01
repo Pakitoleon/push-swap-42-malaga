@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 10:52:45 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/12 13:41:18 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/07/01 10:05:09 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,13 @@ void	ft_stack_free(t_stack **stack)
 		node->content = 0;
 		node->index = 0;
 		node->cost = 0;
+		node->is_upper = 0;
 		if (node->target)
 			node->target = NULL;
 		free(node);
 		node = swp;
 	}
-	*stack = (0);
+	*stack = NULL;
 }
 
 void	free_array(char **arr)
@@ -45,4 +46,21 @@ void	free_array(char **arr)
 		i++;
 	}
 	free(arr);
+}
+
+void	stack_clear(t_stack **a)
+{
+	t_stack	*current;
+	t_stack	*next;
+
+	if (!a || !*a)
+		return ;
+	current = *a;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*a = NULL;
 }

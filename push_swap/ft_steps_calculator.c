@@ -6,7 +6,7 @@
 /*   By: fgonzal2 <fgonzal2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:05:40 by fgonzal2          #+#    #+#             */
-/*   Updated: 2024/06/20 11:31:26 by fgonzal2         ###   ########.fr       */
+/*   Updated: 2024/07/01 11:26:37 by fgonzal2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 void	stack_a_target(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp;
-	long	paper_bin;
+	long	nearest;
 
 	while (a)
 	{
-		paper_bin = LONG_MIN;
+		nearest = LONG_MIN;
 		tmp = b;
 		while (tmp)
 		{
-			if (a->content > tmp->content && tmp->content < paper_bin)
+			if (a->content > tmp->content && tmp->content > nearest)
 			{
-				paper_bin = tmp->content;
+				nearest = tmp->content;
 				a->target = tmp;
 			}
 			tmp = tmp->next;
 		}
-		if (paper_bin == LONG_MIN)
+		if (nearest == LONG_MIN)
 			a->target = ft_min(b);
 		a = a->next;
 	}
@@ -39,22 +39,22 @@ void	stack_a_target(t_stack *a, t_stack *b)
 void	stack_b_target(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp;
-	long	paper_bin;
+	long	nearest;
 
 	while (b)
 	{
-		paper_bin = LONG_MIN;
-		tmp = b;
+		nearest = LONG_MAX;
+		tmp = a;
 		while (tmp)
 		{
-			if (b->content > tmp->content && tmp->content < paper_bin)
+			if (b->content < tmp->content && tmp->content < nearest)
 			{
-				paper_bin = tmp->content;
+				nearest = tmp->content;
 				b->target = tmp;
 			}
 			tmp = tmp->next;
 		}
-		if (paper_bin == LONG_MIN)
+		if (nearest == LONG_MAX)
 			b->target = ft_min(a);
 		b = b->next;
 	}

@@ -23,7 +23,7 @@ rm -rf 0
 
 # -=-=-=-=-	Control errors -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-FILE=$PWD /push_swap
+FILE=$PWD/push_swap
 FICHERO=test_check.txt
 
 if [ -f "$FILE" ]; then
